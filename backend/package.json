@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "tcsc club website",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "author": "priyanshu",
   "license": "ISC",
@@ -17,6 +18,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.5.0",
     "mongoose": "^8.3.1",
-    "mongoose-aggregate-paginate-v2": "^1.0.7"
+    "mongoose-aggregate-paginate-v2": "^1.0.7",
+    "nodemon": "^3.1.0"
   }
 }

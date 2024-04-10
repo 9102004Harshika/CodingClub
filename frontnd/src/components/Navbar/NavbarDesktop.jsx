@@ -1,5 +1,6 @@
 import React from 'react'
 import './NavbarDesktop.css'
+import { Link, NavLink } from 'react-router-dom';
 import {FaBiohazard, FaBookSkull, FaChevronDown, FaComputer} from 'react-icons/fa6'
 import {MdAddCall} from 'react-icons/md'
 import {IoIosHome} from 'react-icons/io'
@@ -15,15 +16,37 @@ const NavbarDesktop = () => {
       </div>
       <div className="center">
         <ul>  
-          <li><IoIosHome/>Home</li>
-          <li><FaBookSkull/>Projects<FaChevronDown/></li>
-          <li><FaComputer/>Events<FaChevronDown/></li>
-          <li><GrOrganization/>About</li>
-          <li><MdAddCall/>Contact</li>
+          <li>
+            <NavLink to="/" className={({isActive})=> `${isActive ? "text-orange-500" : "text-gray-700"}`}>
+            <span className='center-nav-element'><IoIosHome/>Home</span>
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to="/projects" className={({isActive})=> `${isActive ? "text-orange-500" : "text-gray-700"}`}>
+            <span className='center-nav-element'><FaBookSkull/>Projects<FaChevronDown/></span>
+          </NavLink>
+          </li>
+          <li>
+            <NavLink to="/events" className={({isActive})=> `${isActive ? "text-orange-500" : "text-gray-700"}`}>
+            <span className='center-nav-element'><FaComputer/>Events<FaChevronDown/></span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" className={({isActive})=> `${isActive ? "text-orange-500" : "text-gray-700"}`}>
+            <span className='center-nav-element'><GrOrganization/>About</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" className={({isActive})=> `${isActive ? "text-orange-500" : "text-gray-700"}`}>
+            <span className='center-nav-element'><MdAddCall/>Contact</span>
+            </NavLink>
+          </li>
         </ul>
       </div>
       <div className="right">
-        <span><PiSignInBold/>SignIn</span>
+      <NavLink to="/login" className={({isActive})=> `${isActive ? "text-orange-500" : "text-gray-700"}`}>
+      <span><PiSignInBold/>SignIn</span>
+      </NavLink>
       </div>
     </div>
     </>
